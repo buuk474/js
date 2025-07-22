@@ -160,3 +160,189 @@ console.log(`The circumference of a circle with radius ${circleRadius} is approx
 
 ///
 
+let degrees = 90; // Angle in degrees
+
+// Radians = Degrees * (PI / 180)
+let radians = degrees * (Math.PI / 180);
+
+console.log(`${degrees} degrees is approximately ${radians.toFixed(4)} radians.`);
+// Output: 90 degrees is approximately 1.5708 radians. (which is PI/2)
+
+// Example: Using Math.sin() with radians
+console.log(`Sin of ${degrees} degrees: ${Math.sin(radians).toFixed(2)}`); // Output: Sin of 90 degrees: 1.00
+
+///
+
+let clicks = 0;
+console.log(`Initial clicks: ${clicks}`); // 0
+
+clicks++; // User clicks a button
+console.log(`Clicks after first click: ${clicks}`); // 1
+
+clicks++; // User clicks again
+console.log(`Clicks after second click: ${clicks}`); // 2
+
+let itemsInCart = 5;
+console.log(`Items in cart: ${itemsInCart}`); // 5
+
+itemsInCart--; // User removes an item
+console.log(`Items in cart after removal: ${itemsInCart}`); // 4
+
+///
+
+const fruits = ["Apple", "Banana", "Cherry"];
+
+for (let i = 0; i < fruits.length; i++) {
+  console.log(`Fruit at index ${i}: ${fruits[i]}`);
+}
+// Output:
+// Fruit at index 0: Apple
+// Fruit at index 1: Banana
+// Fruit at index 2: Cherry
+
+// Iterating backwards
+for (let i = fruits.length - 1; i >= 0; i--) {
+  console.log(`Fruit (reverse) at index ${i}: ${fruits[i]}`);
+}
+// Output:
+// Fruit (reverse) at index 2: Cherry
+// Fruit (reverse) at index 1: Banana
+// Fruit (reverse) at index 0: Apple
+
+///
+
+let statusCode = 404;
+
+if (statusCode === 200 || statusCode === 201 || statusCode === 204) {
+  console.log("Request was successful.");
+} else if (statusCode === 401 || statusCode === 403) {
+  console.log("Authentication or authorization error.");
+} else if (statusCode === 404 || statusCode === 500) {
+  console.log("Client or server error occurred."); // Output: Client or server error occurred.
+} else {
+  console.log("Unknown status code.");
+}
+
+///
+
+let stockQuantity = 5;
+let productPrice = 29.99;
+
+if (stockQuantity > 0 && productPrice > 0) {
+  console.log("Product is available for purchase."); // Output: Product is available for purchase.
+} else {
+  console.log("Product is unavailable or incorrectly priced.");
+}
+
+// Example with false condition
+let zeroStock = 0;
+let validPrice = 10.00;
+if (zeroStock > 0 && validPrice > 0) {
+  console.log("Product available.");
+} else {
+  console.log("Cannot purchase: Out of stock."); // Output: Cannot purchase: Out of stock.
+}
+
+///
+
+let userRole = "Guest";
+
+if (userRole === "Admin" || userRole === "Moderator") {
+  console.log("Access granted to administrative features.");
+} else {
+  console.log("Access denied. Insufficient privileges."); // Output: Access denied. Insufficient privileges.
+}
+
+// Example with true condition
+let anotherRole = "Moderator";
+if (anotherRole === "Admin" || anotherRole === "Moderator") {
+  console.log("Access granted to administrative features."); // Output: Access granted to administrative features.
+} else {
+  console.log("Access denied.");
+}
+
+///
+
+let base = 2;
+let exponent = 4;
+base **= exponent; // Equivalent to: base = base ** 4; (2 to the power of 4 = 16)
+console.log(`Base after exponentiation: ${base}`); // Output: Base after exponentiation: 16
+
+let radius = 7;
+radius **= 2; // Calculate radius squared (area part)
+console.log(`Radius squared: ${radius}`); // Output: Radius squared: 49
+
+///
+
+console.log(10 <= 10);    // true
+console.log(5 <= 10);     // true
+console.log(15 <= 10);    // false
+console.log('a' <= 'z');  // true
+
+///
+
+for (let i = 0; i <= 5; i++) { // Loop while i is less than or equal to 5
+  console.log(i);
+}
+// Output: 0, 1, 2, 3, 4, 5
+
+///
+
+let ages = 20;
+let canVote = (ages >= 18) ? "Yes" : "No";
+console.log(`Can vote: ${canVote}`); // Output: Can vote: Yes
+
+let temperature = 5;
+let weatherStatus = (temperature > 20) ? "Warm" : "Cold";
+console.log(`Weather: ${weatherStatus}`); // Output: Weather: Cold
+
+//
+
+let grade = 85;
+
+let gradeStatus = (grade >= 90) ? "Excellent" :
+                  (grade >= 70) ? "Pass" :
+                  "Fail";
+console.log(`Student status: ${gradeStatus}`); // Output: Student status: Pass
+
+grade = 95;
+gradeStatus = (grade >= 90) ? "Excellent" :
+              (grade >= 70) ? "Pass" :
+              "Fail";
+console.log(`Student status: ${gradeStatus}`); // Output: Student status: Excellent
+
+grade = 50;
+gradeStatus = (grade >= 90) ? "Excellent" :
+              (grade >= 70) ? "Pass" :
+              "Fail";
+console.log(`Student status: ${gradeStatus}`); // Output: Student status: Fail
+
+///
+
+let operation = '/'; // '+', '-', '*', '/'
+let numA = 10;
+let numB = 2;
+let result;
+
+switch (operation) {
+  case '+':
+    result = numA + numB;
+    break;
+  case '-':
+    result = numA - numB;
+    break;
+  case '*':
+    result = numA * numB;
+    break;
+  case '/':
+    if (numB !== 0) { // Important: handle division by zero
+      result = numA / numB;
+    } else {
+      result = "Error: Division by zero!";
+    }
+    break;
+  default:
+    result = "Invalid operation!";
+}
+
+console.log(`Result of ${numA} ${operation} ${numB}: ${result}`); // Output: Result of 10 / 2: 5
